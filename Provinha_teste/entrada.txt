@@ -1,0 +1,3 @@
+Olá, mundo! Python é incrível. Vamos testar as palavras repetidas, como python e mundo.
+O Python é uma linguagem poderosa, com muitas possibilidades.
+A incrível linguagem Python é usada no mundo todo.

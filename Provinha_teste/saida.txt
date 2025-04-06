@@ -1,0 +1,22 @@
+0001 olá, mundo! python é incrível. vamos testar as palavras repetidas, como python e mundo.
+0002 o python é uma linguagem poderosa, com muitas possibilidades.
+0003 a incrível linguagem python é usada no mundo todo.
+0004 
+Maior palavra: possibilidades
+Menor palavra: é
+Palavras repetidas:
+mundo => 3
+python => 4
+é => 3
+incrível => 2
+linguagem => 2
+Resumo:
+Com 1 letras = 6
+Com 2 letras = 2
+Com 3 letras = 3
+Com 4 letras = 2
+Com 5 letras = 5
+Com 6 letras = 6
+Com 8 letras = 4
+Com 9 letras = 3
+Com 14 letras = 1

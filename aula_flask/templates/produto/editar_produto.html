@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Pessoa</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h2 style="text-align:center;">Editar Produto</h2>
+
+    <form action="/atualizar-produto" method="post">
+        <input type="hidden" name="id" value="{{ produto.id }}">
+
+        <label for="descricao">Descricao:</label>
+        <input type="text" name="descricao" id="descricao" value="{{ produto.descricao }}" required>
+
+        <label for="valor">Valor:</label>
+        <input type="number" name="valor" id="valor" value="{{ produto.valor }}" required>
+
+        <input type="submit" value="Salvar Alterações">
+    </form>
+
+    <div style="text-align:center;">
+        <a href="produto/lista-produto"><button>Cancelar</button></a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultado</title>
+</head>
+<body>
+    <h2>Resultado da Consulta</h2>
+
+    {% if produto %}
+        <p><strong>ID:</strong> {{ produto.id }}</p>
+        <p><strong>Descricao:</strong> {{ produto.nome }}</p>
+        <p><strong>Valor:</strong> {{ produto.endereco }}</p>
+    {% else %}
+        <p style="color:red;">Produto não encontrada com o ID informado.</p>
+    {% endif %}
+
+    <a href="produto/buscar-produto">Voltar</a>
+</body>
+</html>

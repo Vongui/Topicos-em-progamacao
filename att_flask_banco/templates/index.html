@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ titulo }}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+    <div class="container mt-5">
+        <div class="card shadow-lg p-4">
+            <h1 class="text-center mb-4 text-primary">Sistema Acadêmico</h1>
+
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="list-group">
+                        <h5 class="mb-3">Alunos</h5>
+                        <a href="{{ url_for('listar_alunos') }}" class="list-group-item list-group-item-action">
+                            📋 Listar Alunos
+                        </a>
+                        <a href="{{ url_for('cadastrar_aluno') }}" class="list-group-item list-group-item-action">
+                            ➕ Cadastrar Aluno
+                        </a>
+                        <a href="{{ url_for('buscar_aluno') }}" class="list-group-item list-group-item-action">
+                            🔍 Buscar Aluno
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-4">
+                    <div class="list-group">
+                        <h5 class="mb-3">Cursos</h5>
+                        <a href="{{ url_for('listar_cursos') }}" class="list-group-item list-group-item-action">
+                            📋 Listar Cursos
+                        </a>
+                        <a href="{{ url_for('cadastrar_curso') }}" class="list-group-item list-group-item-action">
+                            ➕ Cadastrar Curso
+                        </a>
+                        <a href="{{ url_for('buscar_curso') }}" class="list-group-item list-group-item-action">
+                            🔍 Buscar Curso
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-4">
+                <a href="/" class="btn btn-secondary">Voltar ao Início</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

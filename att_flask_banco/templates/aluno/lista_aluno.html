@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Alunos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<div class="container">
+    <div class="card">
+        <h2 class="text-center">{{ titulo }}</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Cidade</th>
+                    <th>Curso</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for pessoa in lista %}
+                <tr>
+                    <td>{{ pessoa.get_idalunos }}</td>
+                    <td>{{ pessoa.get_nome }}</td>
+                    <td>{{ pessoa.get_cidade }}</td>
+                    <td>{{ pessoa.get_idcursos }}</td>
+                    <td>
+                        <a href="/remover-aluno/{{ pessoa.get_idalunos }}">
+                            <button>Remover</button>
+                        </a>
+                        <a href="/editar-aluno/{{ pessoa.get_idalunos }}">
+                            <button>Alterar</button>
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="text-center">
+            <a href="/"><button>Voltar</button></a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

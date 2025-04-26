@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultado</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<div class="container">
+    <div class="card">
+        <h2>Resultado da Consulta</h2>
+
+        {% if curso %}
+            <p><strong>ID:</strong> {{ curso.get_idcursos }}</p>
+            <p><strong>Nome Curso:</strong> {{ curso.get_nomecurso }}</p>
+            <p><strong>Sigla:</strong> {{ curso.get_sigla }}</p>
+        {% else %}
+            <p style="color:red;">Curso não encontrado com o ID informado.</p>
+        {% endif %}
+
+        <div class="text-center">
+            <a href="{{ url_for('buscar_curso') }}">
+                <button type="button">Voltar</button>
+            </a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Consulta de Curso por ID</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<div class="container">
+    <div class="card">
+        <h2>Consulta de Curso por ID</h2>
+
+        <form action="{{ url_for('buscar_curso') }}" method="post">
+            <label for="idcurso">Selecione o Curso:</label>
+            <select name="idcurso" id="idcurso" required>
+                <option value="">-- Escolha um Curso --</option>
+                {% for curso in lista_cursos %}
+                    <option value="{{ curso.get_idcursos }}">{{ curso.get_idcursos }} - {{ curso.get_sigla }}</option>
+                {% endfor %}
+            </select>
+
+            <input type="submit" value="Buscar">
+        </form>
+
+        <div class="text-center">
+            <a href="{{ url_for('index') }}">
+                <button type="button">Voltar</button>
+            </a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

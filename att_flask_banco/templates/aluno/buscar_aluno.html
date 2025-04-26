@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Consulta de Aluno por ID</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<div class="container">
+    <div class="card">
+        <h2>Consulta de Aluno por ID</h2>
+
+        <form action="{{ url_for('buscar_aluno') }}" method="post">
+            <label for="id">Selecione o Aluno:</label>
+            <select name="id" id="id" required>
+                <option value="">-- Escolha um Aluno --</option>
+                {% for aluno in lista_alunos %}
+                    <option value="{{ aluno.get_idalunos }}">{{ aluno.get_idalunos }} - {{ aluno.get_nome }}</option>
+                {% endfor %}
+            </select>
+
+            <input type="submit" value="Buscar">
+        </form>
+
+        <div class="text-center">
+            <a href="{{ url_for('index') }}">
+                <button type="button">Voltar</button>
+            </a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

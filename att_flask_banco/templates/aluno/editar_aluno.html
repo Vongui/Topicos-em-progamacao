@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Aluno</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<div class="container">
+    <div class="card">
+        <h2>Editar Aluno</h2>
+
+        <form action="/editar-aluno/{{ pessoa.get_idalunos }}" method="post">
+
+            <label for="alunoscol">AlunosCol:</label>
+            <input type="text" name="alunoscol" id="alunoscol" value="{{ pessoa.alunoscol }}" maxlength="40">
+
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" id="nome" value="{{ pessoa.nome }}" maxlength="60" required>
+
+            <label for="cidade">Cidade:</label>
+            <input type="text" name="cidade" id="cidade" value="{{ pessoa.cidade }}" maxlength="50" required>
+
+            <label for="uf">UF:</label>
+            <input type="text" name="uf" id="uf" value="{{ pessoa.uf }}" maxlength="2" required>
+
+            <label for="cep">CEP:</label>
+            <input type="text" name="cep" id="cep" value="{{ pessoa.cep }}" maxlength="9" required>
+
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" value="{{ pessoa.email }}" maxlength="90" required>
+
+            <label for="prontuario">Prontuário:</label>
+            <input type="text" name="prontuario" id="prontuario" value="{{ pessoa.prontuario }}" maxlength="9" required>
+
+            <label for="curso_idcursos">Curso:</label>
+            <select name="curso_idcursos" id="curso_idcursos" required>
+                {% if cursos|length == 1 %}
+                    <option value="{{ cursos[0].get_idcursos }}" selected>{{ cursos[0].get_idcursos }} - {{ cursos[0].get_sigla }}</option>
+                {% else %}
+                    <option value="">-- Selecione o Curso --</option>
+                    {% for curso in cursos %}
+                        <option value="{{ curso.get_idcursos }}" {% if curso.get_idcursos == pessoa.idcurso %}selected{% endif %}>
+                            {{ curso.get_idcursos }} - {{ curso.get_sigla }}
+                        </option>
+                    {% endfor %}
+                {% endif %}
+            </select>
+
+            <input type="submit" value="Salvar Alterações">
+        </form>
+
+        <div class="text-center">
+            <a href="/listar-alunos"><button>Cancelar</button></a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

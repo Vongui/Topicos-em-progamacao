@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultado da Consulta</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<div class="container">
+    <div class="card">
+        <h2>Resultado da Consulta</h2>
+
+        {% if aluno %}
+            <p><strong>ID:</strong> {{ aluno.get_idalunos }}</p>
+            <p><strong>Nome:</strong> {{ aluno.get_nome }}</p>
+            <p><strong>Cidade:</strong> {{ aluno.get_cidade }}</p>
+            <p><strong>Curso:</strong> {{ aluno.get_idcursos }}</p>
+        {% else %}
+            <p class="alert">Aluno não encontrada com o ID informado.</p>
+        {% endif %}
+
+        <div class="text-center">
+            <a href="{{ url_for('buscar_aluno') }}">
+                <button type="button">Voltar</button>
+            </a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

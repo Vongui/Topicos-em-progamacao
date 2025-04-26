@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Curso</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<div class="container">
+    <div class="card">
+        <h2>Editar Curso</h2>
+
+        <form action="{{ url_for('editar_curso', id=curso.get_idcursos) }}" method="post">
+            <input type="hidden" name="id" value="{{ curso.get_idcursos }}">
+
+            <label for="nomecurso">Nome do Curso:</label>
+            <input type="text" name="nomecurso" id="nomecurso" value="{{ curso.get_nomecurso }}" required>
+
+            <label for="sigla">Sigla:</label>
+            <input type="text" name="sigla" id="sigla" value="{{ curso.get_sigla }}" required>
+
+            <input type="submit" value="Salvar Alterações">
+        </form>
+
+        <div class="text-center">
+            <a href="{{ url_for('listar_cursos') }}">
+                <button type="button">Cancelar</button>
+            </a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

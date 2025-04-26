@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Cursos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<div class="container">
+    <div class="card">
+        <h2 class="center">{{ titulo }}</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome Curso</th>
+                    <th>Sigla</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for curso in lista %}
+                <tr>
+                    <td>{{ curso.get_idcursos }}</td>
+                    <td>{{ curso.get_nomecurso }}</td>
+                    <td>{{ curso.get_sigla }}</td>
+                    <td>
+                        <a href="/remover-curso/{{ curso.get_idcursos }}" onclick="return confirm('Deseja realmente remover este registro?');">
+                            <button type="button">Remover</button>
+                        </a>
+                        <a href="/editar-curso/{{ curso.get_idcursos }}">
+                            <button type="button">Alterar</button>
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="text-center">
+            <a href="{{ url_for('index') }}">
+                <button type="button">Voltar</button>
+            </a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

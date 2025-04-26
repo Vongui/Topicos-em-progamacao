@@ -11,7 +11,7 @@ def principal():
 ##CLIENTE
 @app.route('/cadastrar-cliente')
 def cadastrar():
-    return render_template('cliente/cadastro.html',titulo='Cadastrar')
+    return render_template('cliente/cadastro_aluno.html',titulo='Cadastrar')
 
 @app.route('/salvar-cliente',methods=['POST'])
 def salvar():
@@ -23,7 +23,7 @@ def salvar():
 
 @app.route('/lista-cliente')
 def listar():
-    return render_template('cliente/lista.html',
+    return render_template('cliente/lista_aluno.html',
                            lista=dados,
                            titulo='Lista de Pessoas Cadastradas')
 @app.route('/remover-cliente/<int:id>')
@@ -36,7 +36,7 @@ def editar(id):
     pessoa = next((p for p in dados if int(p['id']) == int(id)),
                   None)
     if pessoa:
-        return render_template('cliente/editar.html',
+        return render_template('cliente/editar_aluno.html',
                                                  pessoa=pessoa)
     return redirect('/lista-cliente')
 
@@ -60,7 +60,7 @@ def contato():
 
 @app.route('/buscar-cliente')
 def buscar():
-    return render_template('cliente/buscar.html')
+    return render_template('cliente/buscar_aluno.html')
 
 @app.route('/resultado-cliente')
 def resultado():
@@ -69,7 +69,7 @@ def resultado():
         pessoa = next((p for p in dados if int(p['id']) == int(id_busca)), None)
     except (ValueError, TypeError):
         pessoa = None
-    return render_template('cliente/resultado.html', pessoa=pessoa)
+    return render_template('cliente/resultado_aluno.html', pessoa=pessoa)
 
 
 ##PRODUTO

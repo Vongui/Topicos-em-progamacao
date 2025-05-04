@@ -1,4 +1,4 @@
-class produto:
+class Produto:
     def __init__(self):
         self._codproduto = 0
         self._descricao = ""

@@ -7,7 +7,7 @@ class Venda:
         self._itens = []
 
         self._lista = 'data, valor_total, codcliente'
-        self.__tabelaBanco = ""
+        self.__tabelaBanco = "venda"
         self.__dadosInserir = ""
         self.__dadosUpdate = ""
         self.__dadosDelete = ""

@@ -54,12 +54,6 @@ class ControleGenerico:
         objeto = self.ob.selectQuery(objeto.dadosPesquisa)
         return objeto
 
-    # def apagar(self,entrada):
-    #     self.ob.abrirConexao();
-    #     sql = "delete from aluno where idaluno = {}".format(entrada)
-    #     self.ob.execute(sql)
-    #     self.ob.gravar()
-
     def listarTodos(self,objeto):
         self.ob.abrirConexao()
         dados = self.ob.selectQuery("select * from {}".format(objeto.tabelaBanco))

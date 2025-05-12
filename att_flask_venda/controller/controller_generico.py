@@ -6,11 +6,11 @@ class ControleGenerico:
 
     def __init__(self):
         self.ob = Banco()
-        self.ob.configura(ho="localhost",
-                          db="vendaflask",
-                          us="root",
-                          se="ifsp",
-                          po=3306)
+        self.ob.configura(ho="177.190.74.69",
+                          db="tpc05",
+                          us="trabtpc",
+                          se="trabtpc",
+                          po=65004)
 
     def incluir(self,objeto):
         self.ob.abrirConexao()

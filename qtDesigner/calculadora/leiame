@@ -1,0 +1,3 @@
+#converter arquivo .ui
+
+pyuic5 -x tela1.ui -o tela1.py

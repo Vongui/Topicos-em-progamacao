@@ -5,7 +5,6 @@ from att_flask_banco.model.aluno import Aluno
 from att_flask_banco.model.curso import Curso
 
 app = Flask(__name__)
-app.secret_key = '123'
 controle_aluno = AlunoController()
 controle_curso = CursoController()
 
